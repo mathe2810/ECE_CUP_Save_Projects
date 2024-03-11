@@ -1,10 +1,5 @@
-import numpy as np
-import cv2, PIL
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-import pandas as pd
-
 import cv2
+import numpy as np
 
 
 # # prendre 5 photos à partir de la webcam
@@ -25,9 +20,9 @@ import cv2
 # the ID encoded in the marker itself) rejected : A list of potential markers that were detected but ultimately
 # rejected due to the code inside the marker not being able to be parsed
 
-def form_square_from_arucos(corners):
+def form_square_from_arucos(cornersToCarre):
     # Convertir les coins des marqueurs en un tableau numpy
-    points = np.concatenate(corners, axis=0)
+    points = np.concatenate(cornersToCarre, axis=0)
 
     # Trouver le rectangle englobant des points
     x, y, w, h = cv2.boundingRect(points)
